@@ -1,0 +1,41 @@
+﻿<Window x:Class="D2Runner.MacroWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Макрос" Height="220" Width="300"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid Margin="10">
+        <!-- Определяем строки -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!-- TextBox занимает всю высоту -->
+            <RowDefinition Height="Auto"/>
+            <!-- Панель кнопок -->
+        </Grid.RowDefinitions>
+
+        <!-- TextBox -->
+        <TextBox x:Name="MacroText" 
+                 AcceptsReturn="True" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Stretch"
+                 MinHeight="100"
+                 Grid.Row="0"/>
+
+        <!-- Панель кнопок -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" Grid.Row="1">
+            <Button Content="ⓘ" 
+                    Width="24" Height="24" 
+                    Padding="0" 
+                    Background="Transparent" 
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="InfoButton_Click"/>
+
+            <Button Content="Сохранить" 
+                    Width="80" 
+                    Height="24" 
+                    Margin="5,0,0,0"
+                    Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
